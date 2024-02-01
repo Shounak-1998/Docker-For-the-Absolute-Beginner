@@ -1,0 +1,39 @@
+Basic Docker Commands
+
+Run-start a container
+  The docker run command is used to run a container from an image running the docker run nginx command.
+  docker run nginx
+
+ps -list Commands
+  The Docker ps command list all running containers and some basic information aout them such as container id name status
+  docker ps
+  docker ps -a  This output all running as well as previously stopped or exited conatiners
+
+Stop-stop a container
+  docker stop ruaj_dfdjf
+
+Rm -remove a Container
+  docker rm ruaj_dfdjf
+
+Images -list images
+  docker images
+
+rmi -Remove images
+  docker rmi nginx
+
+Pull-download an image
+  docker run nginx
+  docker pull nginx
+
+Append a command
+  docker run ubuntu
+  docker run ubuntu sleep 5
+
+Exec - execute a command
+  docker ps -a
+  docker exec distracted_mcclintock cat/etc/hosts
+
+Run - attach and detach
+  docker run Shounak/simple-webapp
+  docker run -d Shounak/simple-webapp    -->detach
+  docker attach aet35    -->Attach by ID
