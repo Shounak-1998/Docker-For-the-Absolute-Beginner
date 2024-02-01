@@ -1,0 +1,32 @@
+Why do you need docker?
+  Compatibility/Dependency
+  Long Setup time
+  Different Dev/Test/Prod environments
+
+What can it do?
+  Containerize Applications
+  Run each service with tis own dependencies in seperate containers
+
+What are Containers?
+  Containers are compeletly isolated environments. as they can have there own Process Own Netwrk Own Mounts
+  For ex containers are LXC,LXD,LXCFS etc Docker utlizes LXC Container.
+
+Containers vs Virtual Machines
+  Container
+    Hardware Infrastructure-->OS-->Docker-->Application(Libs,Deps)-->Container(Utilization is less, Size is in MB,Boot up is faster than VM)
+  Virtual Machines
+    Hardware Infrastructure-->Hypervisor-->Application(Libs,Deps)-->Virtual Machine(Utilization is less, Size is in MB,Boot up is faster than VM)
+
+How is it done?
+  It have Public Docker registry - dockerhub
+  docker run ansible
+  docker run mongodb
+  docker run redis
+  docker run nodejs
+
+Container vs Image
+  Image is a package or template VM template
+  Container are running instances of images that are isolated and have their own enviroments and set of process.
+
+Docker in DevOps
+  Developer-->Operation Team-->(App.war, Docker file)-->Docker Image
