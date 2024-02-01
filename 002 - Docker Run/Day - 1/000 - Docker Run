@@ -1,0 +1,32 @@
+Docker Run
+
+Run -tag
+
+  docker run redis
+  dcker run redis:4.0
+
+RUN- STDIN
+
+  docker run kodekloud/simple-prompt-docker
+  docker run -i kodekloud/simple-prompt-docker
+  docker run -it kodekloud/simple-prompt-docker
+
+Run-PORT mapping
+  docker run kodekloud/webapp
+  docker run -p 90:5000 kodekloud/webapp
+  docker run -p 3306:3306 mysql
+  docker run -p 8306:3306 mysql
+
+You cannot map to the same port on the dock or host more than once.
+
+Run-Volume mapping
+  docker run mysql
+  docker stop mysql
+  docker rm mysql
+  docker run -v /opt/datadir:/var/lib/mysql mysql
+
+Inspect Container
+  docker inspect blissful_hopper
+
+Container logs
+  docker logs blissful_hopper
