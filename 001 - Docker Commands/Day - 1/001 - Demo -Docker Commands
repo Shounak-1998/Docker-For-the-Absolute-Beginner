@@ -1,0 +1,44 @@
+[root@Shounak-1998 ~]# docker run -it centos bash
+[root@7f57ea2dfe97 /]#
+
+[root@Shounak-1998 ~]# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+[root@Shounak-1998 ~]# docker run -d centos sleep 20
+7f6d66c7ac5ed685f34360328e8827e34343330434085ffe563aaa2dbfda6bc6
+
+[root@Shounak-1998 ~]# docker ps -a
+CONTAINER ID   IMAGE         COMMAND       CREATED              STATUS                          PORTS     NAMES
+7f6d66c7ac5e   centos        "sleep 20"    About a minute ago   Exited (0) About a minute ago             nervous_vaughan
+7f57ea2dfe97   centos        "bash"        About a minute ago   Exited (0) About a minute ago             heuristic_noyce
+bc50cd398da4   centos        "bash"        4 minutes ago        Exited (127) 3 minutes ago                pensive_lumiere
+73f44ac99f4a   centos        "/bin/bash"   5 minutes ago        Exited (0) 5 minutes ago                  magical_feistel
+386a0aee3f5d   hello-world   "/hello"      41 minutes ago       Exited (0) 41 minutes ago                 great_chaum
+
+[root@Shounak-1998 ~]# docker run -d centos sleep 2000
+de21c011bfab797da864c5e66d7c93d749f226d3510b8354bf33de4d4ed2aa46
+[root@Shounak-1998 ~]# docker ps
+CONTAINER ID   IMAGE     COMMAND        CREATED         STATUS         PORTS     NAMES
+de21c011bfab   centos    "sleep 2000"   4 seconds ago   Up 3 seconds             nifty_thompson
+[root@Shounak-1998 ~]# docker stop nifty_thompson
+nifty_thompson
+[root@Shounak-1998 ~]# docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+rm is used to remove container rmi is used to remove image
+
+[root@Shounak-1998 ~]# docker images
+REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
+hello-world   latest    d2c94e258dcb   9 months ago   13.3kB
+centos        latest    5d0da3dc9764   2 years ago    231MB
+[root@Shounak-1998 ~]# docker rmi hello-world
+Untagged: hello-world:latest
+Untagged: hello-world@sha256:4bd78111b6914a99dbc560e6a20eab57ff6655aea4a80c50b0c5491968cbc2e6
+Deleted: sha256:d2c94e258dcb3c5ac2798d32e1249e42ef01cba4841c2234249495f87264ac5a
+Deleted: sha256:ac28800ec8bb38d5c35b49d45a6ac4777544941199075dff8c4eb63e093aa81e
+[root@Shounak-1998 ~]# docker images
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+centos       latest    5d0da3dc9764   2 years ago   231MB
+
+
+
