@@ -1,1 +1,20 @@
 Create Docker File
+
+Create a folder name my-simple-webapp
+Inside that create a file called Dockerfile
+vi it with docker contain as below
+
+[root@Shounak-1998 my-simple-webapp]# cat Dockerfile
+FROM ubuntu
+
+RUN apt-get update
+RUN apt-get install -y python-is-python3 python3-pip
+RUN pip3 install flask
+
+COPY app.py /opt/app.py
+
+ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0
+
+
+[root@Shounak-1998 my-simple-webapp]# docker build . -t my-simple-webapp
+[root@Shounak-1998 my-simple-webapp]# docker run my-simple-webapp
