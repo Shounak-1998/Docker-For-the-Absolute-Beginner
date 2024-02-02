@@ -1,0 +1,16 @@
+CMD vs ENTRYPOINT
+
+
+docker run ubuntu
+docker ps
+docker ps -a
+
+CMD
+
+FROM ubuntu
+CMD sleep 5
+
+ENTRYPOINT
+
+FROM ubuntu
+ENTRYPOINT ["sleep"]
