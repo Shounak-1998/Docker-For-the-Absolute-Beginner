@@ -1,0 +1,23 @@
+Docker Images
+
+What am I containerizing?
+
+How to Create my own image?
+OS-Ubuntu
+Update apt repo
+Install dependencies using apt
+Install pyhton dependencies using ppip
+Copy source code to /opt folder
+Run the web server using "flask" command
+
+Dockerfile
+Instruction|Argument
+
+FROM Ubuntu
+RUN apt-get update && apt-get -y install python
+RUN pip install flask flask-mysql
+COPY . /opt/source-code
+ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run
+
+docker build . -f Dockerfile -t shounak/my-custom-app
+docker push shounak/my-custom-app------------------->Docker Registry
