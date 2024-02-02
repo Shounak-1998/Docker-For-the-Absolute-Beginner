@@ -39,7 +39,7 @@ This command installs Docker, but it doesn't start Docker. It also creates a doc
 Start Docker.
 
 
- sudo systemctl start docker
+sudo systemctl start docker
 Verify that the Docker Engine installation is successful by running the hello-world image.
 
 
