@@ -1,3 +1,6 @@
+
+SIMPLE WEBAPP FLASK
+
 Ubuntu images starts and it runs the bash command and it takes or it attaches input to terminal
 [root@Shounak-1998 ~]# docker run -it ubuntu bash
 
@@ -5,7 +8,7 @@ Ubuntu images starts and it runs the bash command and it takes or it attaches in
 root@:/# apt-get update
 apt-get install -y python-is-python3
 python
-apt-get install python-pip
+apt-get install python3-pip
 
 #Install and Configure web server
 pip install flask
