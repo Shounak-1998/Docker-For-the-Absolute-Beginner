@@ -1,1 +1,51 @@
+docker ps
+docker run ubuntu cat /etc/*release*
+
+Supported tags and respective Dockerfile links
+20.04, focal-20240123, focal
+22.04, jammy-20240125, jammy, latest
+23.10, mantic-20240122, mantic, rolling
+24.04, noble-20240127.1, noble, devel
+
+To download specific version below is the command tag your images different purpose
+docker run ubuntu:24.04 cat /etc/*release*
+
+It will sleep for 1500 sec
+docker run ubuntu:24.04 sleep 15
+
+To stop the hang container
+[root@Shounak-1998 ~]# docker stop container_ID
+
+Like to run in background or detach mode in the background
+[root@Shounak-1998 ~]# docker run -d ubuntu:24.04 sleep 1500
+
+Attach mode
+[root@Shounak-1998 ~]# docker attach container_ID
+
+Install image Jenkins
+docker run jenkins/jenkins
+
+Interal ip and external ip 2 method for web hosting
+docker inspect CONTAINER ID-->shows the docker Internal Ip in Network section
+
+External How to access(Add Port Mapping)
+#docker run -p 8080:8080 jenkins/jenkins
+########
+[root@Shounak-1998 ~]# docker run -p 8080:8080 -v /root/jenkins_data/:/var/jenkins_home -u root jenkins/jenkins
+#########
+If you destru docker conatiners and run a new container and if uou'd like to persist your configuration got to map volume
+
+How to use this image
+docker run -p 8080:8080 -p 50000:50000 jenkins
+This will store the workspace in /var/jenkins_home. All Jenkins data lives in there - including plugins and configuration. You will probably want to make that a persistent volume (recommended):
+
+docker run -p 8080:8080 -p 50000:50000 -v /your/home:/var/jenkins_home jenkins
+This will store the jenkins data in /your/home on the host. Ensure that /your/home is accessible by the jenkins user in container (jenkins user - uid 1000) or use -u some_other_user parameter with docker run.
+
+You can also use a volume container:
+
+docker run --name myjenkins -p 8080:8080 -p 50000:50000 -v /var/jenkins_home jenkins
+Then myjenkins container has the volume (please do read about docker volume handling to find out more).
+
+
 
