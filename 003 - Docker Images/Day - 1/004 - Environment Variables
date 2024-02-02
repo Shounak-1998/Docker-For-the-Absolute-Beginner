@@ -3,3 +3,11 @@ Environment Variables
 color = "red"
 color = os.environ.get('APP-COLOR')
 docker run simple-webapp-color
+
+Set the environment
+
+docker run -e APP_COLOR=blue  simple-webapp-color
+
+How to find environment varibale set in container
+
+docker inspect container_name
