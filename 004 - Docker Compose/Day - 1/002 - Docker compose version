@@ -1,0 +1,48 @@
+Docker compose -- version
+
+version 1
+
+docker-compose.yml
+
+redis:
+  image:  redis
+db:
+  image:  postgres:9.4
+vote: 
+  image:  voting-app
+  ports:
+      -  5000:80
+  links:
+      -  redis
+
+version 2
+
+docker-compose.yml
+
+services:
+  redis:
+    image:  redis
+  db:
+    image:  postgres:9.4
+  vote:
+    image:  voting-app
+    ports:
+      -  5000:80
+    depends_on:
+      -  redis
+
+version 3
+
+docker-compose.yml
+
+services:
+  redis:
+    image:  redis
+  db:
+    image:  postgres:9.4
+  vote:
+    image:  voting-app
+    ports:
+      -  5000:80
+
+
