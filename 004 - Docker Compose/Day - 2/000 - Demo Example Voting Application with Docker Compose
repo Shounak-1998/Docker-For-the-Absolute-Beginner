@@ -1,1 +1,10 @@
 Install Compsoe on Linux
+
+Install using the repository
+
+sudo yum update
+sudo yum install docker-compose-plugin
+
+docker compose version
+
+Docker Compose version vN.N.N
