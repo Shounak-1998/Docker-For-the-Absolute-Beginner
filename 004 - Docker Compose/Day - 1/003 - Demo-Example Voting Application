@@ -1,12 +1,13 @@
 Move to votinf-app
 #voting-app build
 docker build . -t voting-app
+docker run -d -p 5000:80 --link redis:redis voting-app
 #voting-app
 docker run -d --name=redis redis
 
 Move to redis
 #redis build
-docker build . -t redis
+---->Skip----<docker build . -t redis
 #redis-->append link
 docker run -d -p 5000:80 --link redis:redis voting-app
 
@@ -14,7 +15,7 @@ Move to Progres
 #postgres build
 docker build . -t postgres:15-alpine
 #postgres
-docker run -d -p --name=db postgres:15-alpine
+docker run -d --name=db postgres:15-alpine
 docker run -e POSTGRES_PASSWORD=postgres --name=db postgres:15-alpine
 
 Move to worker-app
