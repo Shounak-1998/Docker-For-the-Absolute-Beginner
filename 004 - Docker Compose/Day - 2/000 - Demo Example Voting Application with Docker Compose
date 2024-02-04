@@ -11,3 +11,6 @@ Docker Compose version vN.N.N
 
 Create a file docker-compose.yml
 vi in 001 - docker-compose.yaml
+
+/root/compose-application
+docker compose up
