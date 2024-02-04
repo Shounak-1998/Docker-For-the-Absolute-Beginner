@@ -1,0 +1,17 @@
+File System
+
+Install docker creat folder structure onder /var/lib/docker
+--aufs
+containers
+image
+volumes
+
+Layered Architecture
+Layer1: Base Ubuntu Layer  120MB
+Layer2: Changes in apt packages  306MB
+Layer3: Changes in pip packages  6.3MB
+Layer4:Source Code  229B
+Layer5: Update Entrypoint of the image  0B
+
+docker system df
+docker system df -v
