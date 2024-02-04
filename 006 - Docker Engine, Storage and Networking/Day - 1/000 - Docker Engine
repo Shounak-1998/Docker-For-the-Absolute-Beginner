@@ -1,1 +1,26 @@
-0
+When you install Docker on a Linux host you're actually installing three different competenece
+
+Docker Engine
+
+Docker Daemon-->Is the background process that manages objects such as the images conatainers volumes and networks
+REST API-->Is the API Interface that programs can use to talk to the daemon and provide instructions
+Docker CLI-->Command Line Interface to perform action run destroy stop start
+
+containerization
+
+Namespace
+
+Process ID
+Unix timesharing
+Mount
+Interprocess
+Network
+
+cgroups
+
+docker run --cpu=.5 ubuntu
+docker run --memory=100m ubuntu
+Linux system
+Docker container
+CPU
+Memory
