@@ -1,0 +1,15 @@
+Default networks
+Bridge-->None-->host
+
+Bridge-->docker run ubuntu
+Bridge network is a private internal network created by docker on the host
+none-->docker run ubuntu --network=none
+host-->docker run ubuntu --network=host
+
+User-defined networks
+docker network create \
+  --driver bridge  \
+  --subnet  182.18.0.0/16
+  custom-isolated-network
+
+docker network ls
